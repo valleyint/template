@@ -11,8 +11,8 @@ const (
 
 // mesurments in mm
 var (
-	borderDistance float64 = 15
-	lineGap        float64 = 8.5
+	borderDistance float64 = 16
+	lineGap        float64 = 8
 	fileNm                 = "hello.pdf"
 )
 
@@ -29,6 +29,11 @@ func main() {
 	gc.LineTo(a4width-borderDistance, a4length-borderDistance)
 	gc.LineTo(borderDistance, a4length-borderDistance)
 	gc.LineTo(borderDistance, borderDistance)
+
+	for loop := borderDistance + lineGap; loop < a4length-borderDistance; loop += lineGap {
+		gc.MoveTo(borderDistance, loop)
+		gc.LineTo(a4width-borderDistance, loop)
+	}
 	// Draw a closed shape
 	//gc.MoveTo(1, 1) // should always be called first for a new path
 	//gc.LineTo(90, 1)
