@@ -11,7 +11,7 @@ const (
 
 // mesurments in mm
 var (
-	borderDistance float64 = 16
+	borderDistance float64 = 16.5
 	lineGap        float64 = 8
 	fileNm                 = "hello.pdf"
 )
